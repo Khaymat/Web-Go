@@ -1,8 +1,8 @@
-# Web-Go
+## Web-Go
 
 Proyek ini adalah sebuah portfolio berbasis web yang menggunakan **Golang** sebagai backend dan **Typescript** sebagai frontend. Backend bertanggung jawab untuk menangani operasi CRUD daftar proyek, sedangkan frontend akan menampilkan proyek yang telah dibuat.
 
-# Fitur Utama
+## Fitur Utama
 - Backend menggunakan **Golang** dengan **Supabase** sebagai database.
 - Frontend menggunakan **Typescript** dan **TailwindCSS**.
 - API terstruktur dengan modularisasi yang baik.
