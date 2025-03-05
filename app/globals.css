@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.cursor-outline {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid hsla(var(--primary), 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: all 0.2s ease-out;
+}
+
+body {
+  background-color: hsl(var(--background));
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      hsla(var(--primary), 0.05) 25%,
+      hsla(var(--primary), 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      hsla(var(--primary), 0.05) 75%,
+      hsla(var(--primary), 0.05) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      hsla(var(--primary), 0.05) 25%,
+      hsla(var(--primary), 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      hsla(var(--primary), 0.05) 75%,
+      hsla(var(--primary), 0.05) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 50px 50px;
+}
+
+.neon-glow {
+  box-shadow: 0 0 5px hsla(var(--primary), 0.2), 0 0 10px hsla(var(--primary), 0.2), 0 0 15px hsla(var(--primary), 0.2),
+    0 0 20px hsla(var(--primary), 0.2), 0 0 35px hsla(var(--primary), 0.2), 0 0 40px hsla(var(--primary), 0.2);
+}
+
+.dark .cursor-dot {
+  background-color: hsl(var(--primary));
+}
+
+.dark .cursor-outline {
+  border-color: hsla(var(--primary), 0.5);
+}
+
+.dark canvas {
+  filter: hue-rotate(0deg);
+}
+
+.light-text {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.dark .light-text {
+  text-shadow: none;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Button animations */
+.button-hover {
+  @apply transition-all duration-300 hover:scale-105 active:scale-95;
+}
+
+/* Decorative elements */
+.decoration-dots {
+  background-image: radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+.decoration-wave {
+  background-image: url("/images/decorations/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.05;
+}
+
+.decoration-circuit {
+  background-image: url("/images/decorations/circuit.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+}
+
+/* Add decorative elements to specific pages */
+.about-decoration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  @apply decoration-dots;
+}
+
+.services-decoration::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  @apply decoration-wave;
+}
+
+.contact-decoration::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  transform: translateY(-50%);
+  @apply decoration-circuit;
+}
+
