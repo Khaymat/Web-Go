@@ -1,13 +1,12 @@
-# Portfolio API
+# Web-Go
 
-Portfolio API adalah backend yang menyediakan data untuk website portofolio, termasuk informasi profil, proyek, keterampilan, layanan, dan kontak.
+Proyek ini adalah sebuah portfolio berbasis web yang menggunakan **Golang** sebagai backend dan **Typescript** sebagai frontend. Backend bertanggung jawab untuk menangani operasi CRUD daftar proyek, sedangkan frontend akan menampilkan proyek yang telah dibuat.
 
-## Teknologi yang Digunakan
+# Fitur Utama
+- Backend menggunakan **Golang** dengan **Supabase** sebagai database.
+- Frontend menggunakan **Typescript** dan **TailwindCSS**.
+- API terstruktur dengan modularisasi yang baik.
 
-- **Golang** (backend utama)
-- **Supabase** (PostgreSQL sebagai database)
-- **Gin** (untuk router API)
-- **Docker** (opsional, untuk deployment)
 
 ## Struktur Database
 
