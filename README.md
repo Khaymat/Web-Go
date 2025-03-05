@@ -1,26 +1,25 @@
-## Web-Go
+# Web-Go
 
-Proyek ini adalah sebuah portfolio berbasis web yang menggunakan **Golang** sebagai backend dan **Typescript** sebagai frontend. Backend bertanggung jawab untuk menangani operasi CRUD daftar proyek, sedangkan frontend akan menampilkan proyek yang telah dibuat.
+This project is a web-based portfolio that uses **Golang** as the backend and **TypeScript** as the frontend. The backend handles CRUD operations for the project list, while the frontend displays the created projects.
 
-## Fitur Utama
-- Backend menggunakan **Golang** dengan **Supabase** sebagai database.
-- Frontend menggunakan **Typescript** dan **TailwindCSS**.
-- API terstruktur dengan modularisasi yang baik.
+## Key Features
+- Backend powered by **Golang** with **Supabase** as the database.
+- Frontend built with **TypeScript** and **TailwindCSS**.
+- Well-structured API with modularization.
 
+## Database Structure
 
-## Struktur Database
+Main tables in the database:
+- `profile` → User profile data (name, description, avatar, etc.)
+- `projects` → List of completed projects
+- `skills` → Skills and categories
+- `education` → Education history
+- `social_links` → Social media links
+- `services` → Services offered
+- `service_tiers` → Service packages with pricing
+- `contact_submissions` → Contact form submissions
 
-Tabel utama dalam database:
-- `profile` → Data profil pengguna (nama, deskripsi, avatar, dll.)
-- `projects` → Daftar proyek yang dikerjakan
-- `skills` → Keterampilan dan kategori
-- `education` → Riwayat pendidikan
-- `social_links` → Link media sosial
-- `services` → Layanan yang ditawarkan
-- `service_tiers` → Paket layanan dengan harga
-- `contact_submissions` → Formulir kontak yang dikirimkan
-
-### Schema SQL
+### SQL Schema
 
 ```sql
 -- Create projects table
@@ -99,27 +98,32 @@ CREATE TABLE contact_submissions (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 ```
+## API Endpoints
 
-## Endpoint API (Backend)
+The API will be used by the frontend to display data on the portfolio website. If the API fails, the website will not be able to show information.
 
-API ini akan digunakan oleh frontend untuk menampilkan data ke website portfolio. Jika API gagal, maka halaman website juga tidak bisa menampilkan informasi.
+## Public Endpoints
 
-| Metode | Endpoint        | Deskripsi                       |
-|--------|---------------|---------------------------------|
-| GET    | `/profile`     | Mengambil data profil          |
-| GET    | `/projects`    | Mengambil daftar proyek        |
-| GET    | `/skills`      | Mengambil daftar keterampilan  |
-| GET    | `/education`   | Mengambil riwayat pendidikan   |
-| GET    | `/social_links`| Mengambil link sosial media    |
-| GET    | `/services`    | Mengambil layanan              |
-| POST   | `/contact`     | Mengirim pesan kontak          |
+| Method | Endpoint       | Description                      |
+|--------|--------------|----------------------------------|
+| GET    | `/profile`     | Retrieve profile data          |
+| GET    | `/projects`    | Retrieve the list of projects  |
+| GET    | `/skills`      | Retrieve the list of skills    |
+| GET    | `/education`   | Retrieve education history     |
+| GET    | `/social_links`| Retrieve social media links    |
+| GET    | `/services`    | Retrieve the list of services  |
+| POST   | `/contact`     | Send a contact message         |
 
-## Konfigurasi Database
+## Database Configuration
 
-Proyek ini menggunakan Supabase sebagai database. Pastikan untuk membuat database di Supabase dan mengatur variabel lingkungan yang diperlukan dalam file .env .
-``` bash
-SUPABASE_URL=<your-supabase-url>
-SUPABASE_KEY=<your-supabase-key>
-JWT_SECRET=<your-jwt-secret>
+This project uses **Supabase** as the database. Make sure to create a database in Supabase and configure the required environment variables in the `.env` file.  
+
+### Example Configuration:
+
+```bash
+PORT=8080
+FRONTEND_URL=http://localhost:3000
+SUPABASE_URL=https://your-project-id.supabase.co
+SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ```
-
