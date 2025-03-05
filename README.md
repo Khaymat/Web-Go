@@ -118,12 +118,4 @@ The API will be used by the frontend to display data on the portfolio website. I
 
 This project uses **Supabase** as the database. Make sure to create a database in Supabase and configure the required environment variables in the `.env` file.  
 
-### Example Configuration:
 
-```bash
-PORT=8080
-FRONTEND_URL=http://localhost:3000
-SUPABASE_URL=https://your-project-id.supabase.co
-SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-```
