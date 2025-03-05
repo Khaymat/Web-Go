@@ -100,7 +100,7 @@ CREATE TABLE contact_submissions (
 );
 ```
 
-# Endpoint API (Backend)
+## Endpoint API (Backend)
 
 API ini akan digunakan oleh frontend untuk menampilkan data ke website portfolio. Jika API gagal, maka halaman website juga tidak bisa menampilkan informasi.
 
@@ -113,4 +113,13 @@ API ini akan digunakan oleh frontend untuk menampilkan data ke website portfolio
 | GET    | `/social_links`| Mengambil link sosial media    |
 | GET    | `/services`    | Mengambil layanan              |
 | POST   | `/contact`     | Mengirim pesan kontak          |
+
+## Konfigurasi Database
+
+Proyek ini menggunakan Supabase sebagai database. Pastikan untuk membuat database di Supabase dan mengatur variabel lingkungan yang diperlukan dalam file .env .
+``` bash
+SUPABASE_URL=<your-supabase-url>
+SUPABASE_KEY=<your-supabase-key>
+JWT_SECRET=<your-jwt-secret>
+```
 
